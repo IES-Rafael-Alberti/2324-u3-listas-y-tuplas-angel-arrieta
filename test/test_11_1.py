@@ -1,13 +1,13 @@
 import pytest
-from src.Ej_11_1 import function
+from src.Ej_11_1 import producto_escalar
 
 
 @pytest.mark.parametrize(
-    "inMensaje, outMensaje",
+    "inVectorA, inVectorB, outProd_escalar",
     [
-        ("Entrada1", "Salida1"),
-        ("Entrada2", "Salida2")
+        ((1, 2, 3), (-1, 0, 2), 5),
+        ((3, 4, 2), (0, -2, 4), 0)
     ]
 )
-def test_function(inMensaje, outMensaje):
-    assert function(inMensaje) == outMensaje
+def test_producto_escalar(inVectorA, inVectorB, outProd_escalar):
+    assert producto_escalar(inVectorA, inVectorB) == outProd_escalar

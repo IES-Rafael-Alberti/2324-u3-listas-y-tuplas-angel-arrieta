@@ -1,13 +1,13 @@
 import pytest
-from src.Ej_10_1 import function
+from src.Ej_10_1 import min_max
 
 
 @pytest.mark.parametrize(
-    "inMensaje, outMensaje",
+    "inLista, outDupla",
     [
-        ("Entrada1", "Salida1"),
-        ("Entrada2", "Salida2")
+        ([76, 34, 29, 50, 41, 11], [11, 76]),
+        ([84, 93, 7, 27, 45], [7, 93])
     ]
 )
-def test_function(inMensaje, outMensaje):
-    assert function(inMensaje) == outMensaje
+def test_min_max(inLista, outDupla):
+    assert min_max(inLista) == outDupla

@@ -1,13 +1,26 @@
 import pytest
-from src.Ej_8_1 import function
+from src.Ej_8_1 import palindromo, control_palabra
 
 
 @pytest.mark.parametrize(
-    "inMensaje, outMensaje",
+    "inPalabra, outBooleano",
     [
-        ("Entrada1", "Salida1"),
-        ("Entrada2", "Salida2")
+        ("Aranara", True),
+        ("Saracatunga", False)
     ]
 )
-def test_function(inMensaje, outMensaje):
-    assert function(inMensaje) == outMensaje
+def test_palindromo(inPalabra, outBooleano):
+    assert palindromo(inPalabra) == outBooleano
+
+
+@pytest.mark.parametrize(
+    "inPalabra, outNum_error",
+    [
+        ("Me gusta la pizza", 2),
+        ("Colchones", 0),
+        ("M3 gust4 1a pi7z4", 2),
+        ("R3g4r1amos", 1),
+    ]
+)
+def test_control_palabra(inPalabra, outNum_error):
+    assert control_palabra(inPalabra) == outNum_error

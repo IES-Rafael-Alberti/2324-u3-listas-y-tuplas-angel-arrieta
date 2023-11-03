@@ -7,9 +7,17 @@ de los precios.
 """
 
 
-def function(example: str) -> str:
-    return None
+def min_max(lista: list) -> list:
+    min_max = []
+    min_max.append(min(lista))
+    min_max.append(max(lista))
+    return min_max
 
 
 if __name__ == "__main__":
-    ""
+    #  Entrada
+    lista = [50, 75, 46, 22, 80, 65, 8]
+    #  Proceso
+    min_max = min_max(lista)
+    #  Salida
+    print(f"El menor precio es {min_max[0]} y el mayor {min_max[1]}")
