@@ -7,9 +7,27 @@ y muestre por pantalla la lista resultante.
 """
 
 
-def function(example: str) -> str:
-    return None
+def borra_multitres(abece: list) -> list:
+    """
+    Quita las letras que en orden son múltiplos de 3
+    ---------------
+    abece:  list
+        lista con el abecedario
+    return:  list
+        abecedario sin las letras correspondientes
+    """
+    listado = []
+    abece.sort()
+    for letra in abece:
+        if (abece.index(letra)+1) % 3 == 0:
+            continue
+        else:
+            listado.append(letra)
+    return listado
 
 
 if __name__ == "__main__":
-    ""
+    abecedario = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ",
+                  "z", "x", "c", "v", "b", "n", "m"]
+    sin_multitres = borra_multitres(abecedario)
+    print(sin_multitres)

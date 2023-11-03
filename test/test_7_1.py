@@ -1,13 +1,13 @@
 import pytest
-from src.Ej_7_1 import function
+from src.Ej_7_1 import borra_multitres
 
 
 @pytest.mark.parametrize(
-    "inMensaje, outMensaje",
+    "inListado, outSinmultiplos",
     [
-        ("Entrada1", "Salida1"),
-        ("Entrada2", "Salida2")
+        (["q", "w", "e", "r", "t"], ["e", "q", "t", "w"]),
+        (["a", "s", "d", "f", "g", "h", "j"], ["a", "d", "g", "h", "s"]),
     ]
 )
-def test_function(inMensaje, outMensaje):
-    assert function(inMensaje) == outMensaje
+def test_borra_multitres(inListado, outSinmultiplos):
+    assert borra_multitres(inListado) == outSinmultiplos
