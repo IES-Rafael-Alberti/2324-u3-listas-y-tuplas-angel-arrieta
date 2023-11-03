@@ -31,13 +31,24 @@ def adecuacion_lista(lista: list) -> list:
     return listado
 
 
-def media_aritmetica(lista: list) -> int:
+def media_aritmetica(lista: list) -> int or float:
+    import math
     suma = 0
     cantidad_datos = len(lista)
     for numero in lista:
         suma += numero
     media = suma/cantidad_datos
-    return media
+    return round(media, 2)
+
+
+def desviacion(lista: list, media: int or float) -> int or float:
+    import math
+    sumatorio = 0
+    cantidad_datos = len(lista)
+    for numero in lista:
+        sumatorio += (numero-media)**2
+    desviacion = math.sqrt(sumatorio/cantidad_datos)
+    return round(desviacion, 2)
 
 
 if __name__ == "__main__":
@@ -50,7 +61,8 @@ if __name__ == "__main__":
             raise ValueError(error)
         lista_tipada = adecuacion_lista(lista_dividida)
         media = media_aritmetica(lista_tipada)
-        print(f"La media aritmetica de tus numeros {lista_tipada} es {media}")
+        desviacion_tipica = desviacion(lista_tipada, media)
+        print(f"De {lista_tipada} la media es {media} y la desviacion típica es {desviacion_tipica}")
     except ValueError:
         if error == 1:
             print("Algún elemento de la lista contiene caracteres no númericos")

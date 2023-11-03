@@ -1,5 +1,5 @@
 import pytest
-from src.Ej_13_1 import dividir, control_lista, adecuacion_lista, media_aritmetica
+from src.Ej_13_1 import dividir, control_lista, adecuacion_lista, media_aritmetica, desviacion
 
 
 @pytest.mark.parametrize(
@@ -47,11 +47,11 @@ def test_media_aritmetica(inLista, outMedia):
 
 
 @pytest.mark.parametrize(
-    "inMensaje, outMensaje",
+    "inLista, inMedia, outDesviacion",
     [
-        ("Entrada1", "Salida1"),
-        ("Entrada2", "Salida2")
+        ([26, 10], 18, 8),
+        ([12, 10, 13, 17], 13, 2.55)
     ]
 )
-def test_function(inMensaje, outMensaje):
-    assert function(inMensaje) == outMensaje
+def test_desviacion(inLista, inMedia, outDesviacion):
+    assert desviacion(inLista, inMedia) == outDesviacion
