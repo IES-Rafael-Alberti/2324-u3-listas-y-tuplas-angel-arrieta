@@ -16,6 +16,9 @@ def ordena_invertido(numeros: list) -> str:
 
 
 if __name__ == "__main__":
+    #  Entrada
     lista = [4, 2, 9, 7, 5, 8, 10, 3, 6, 1]
+    #  Proceso
     ordenado = ordena_invertido(lista)
+    #  Salida
     print(ordenado)

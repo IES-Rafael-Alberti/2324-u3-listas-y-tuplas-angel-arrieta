@@ -54,7 +54,9 @@ if __name__ == "__main__":
     modulo = ""
     error = 0
     try:
+        #  Proceso
         while modulo != "terminar":
+            #  Entrada
             modulo = str(input("Introduce una materia\n('terminar', acaba el programa)\n> "))
             if modulo == "terminar":
                 if len(materias) < 1:
@@ -68,6 +70,7 @@ if __name__ == "__main__":
                 if error != 0:
                     raise ValueError(error)
                 materias.append(modulo)
+    #  Salida
         print(asignaturas)
     except ValueError:
         if error == 1:

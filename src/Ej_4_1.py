@@ -42,11 +42,14 @@ if __name__ == "__main__":
     error = 0
     loteria = ""
     try:
+        #  Entrada
         loteria = input("Dime los numeros ganadores\n(max longitud 5) > ")
+        #  Proceso
         error = control_numloto(loteria)
         if error != 0:
             raise ValueError(error)
         loteria_ordenada = ordena(loteria)
+    #  Salida
         print(loteria_ordenada)
     except ValueError:
         if error == 1:

@@ -27,7 +27,10 @@ def borra_multitres(abece: list) -> list:
 
 
 if __name__ == "__main__":
+    #  Entrada
     abecedario = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "ñ",
                   "z", "x", "c", "v", "b", "n", "m"]
+    #  Proceso
     sin_multitres = borra_multitres(abecedario)
+    #  Salida
     print(sin_multitres)

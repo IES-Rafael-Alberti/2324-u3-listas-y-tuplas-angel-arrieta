@@ -73,7 +73,9 @@ if __name__ == "__main__":
     modulo = ""
     nota = ""
     try:
+        #  Proceso
         while modulo != "terminar":
+            #  Entrada
             modulo = str(input("Introduce una materia\n('terminar', acaba el programa)\n> "))
             if modulo == "terminar":
                 if len(materias) < 1:
@@ -89,6 +91,7 @@ if __name__ == "__main__":
                 materias.append(modulo)
                 while type(nota) is not int:
                     try:
+                        #  Entrada
                         nota = int(input("Introduce la nota que tienes en la materia (0-10) > "))
                     except ValueError:
                         print("Introduzca un número entero")
@@ -97,6 +100,7 @@ if __name__ == "__main__":
                     raise ValueError(error)
                 notas.append(nota)
                 nota = ""
+    #  Salida
         if a_recuperar == "":
             print("No tienes nada que recuperar")
         else:
