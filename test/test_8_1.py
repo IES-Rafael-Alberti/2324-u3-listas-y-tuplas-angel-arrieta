@@ -1,5 +1,5 @@
 import pytest
-from src.Ej_8_1 import palindromo, control_palabra
+from src.Ej_8_1 import palindromia, control_palabra
 
 
 @pytest.mark.parametrize(
@@ -9,8 +9,8 @@ from src.Ej_8_1 import palindromo, control_palabra
         ("Saracatunga", False)
     ]
 )
-def test_palindromo(inPalabra, outBooleano):
-    assert palindromo(inPalabra) == outBooleano
+def test_palindromia(inPalabra, outBooleano):
+    assert palindromia(inPalabra) == outBooleano
 
 
 @pytest.mark.parametrize(

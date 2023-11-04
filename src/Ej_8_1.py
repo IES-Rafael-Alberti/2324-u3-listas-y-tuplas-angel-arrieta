@@ -15,9 +15,12 @@ def palindromia(palabra: str) -> bool:
         return: boolean
             devuelve True o False dependiendo de si se cumple la condición
     """
-    reversa = list(palabra)
-    reversa.reverse()
-    reversa = "".join(reversa)
+    listada = []
+    palabra = palabra.lower()
+    for caracter in palabra:
+        listada.append(caracter)
+    listada.reverse()
+    reversa = "".join(listada)
     if reversa == palabra:
         return True
     else:
